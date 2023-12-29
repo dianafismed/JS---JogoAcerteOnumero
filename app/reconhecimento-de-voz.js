@@ -1,10 +1,9 @@
-const sugerido = document.getElementById('chute')
+var sugerido = document.getElementById('chute')
 
 window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-
 const recognition = new SpeechRecognition();
 
-recognition.continuous = false; // apenas 1 resultado
+recognition.continuous = false // apenas 1 resultado
 recognition.lang = 'pt-BR'
 recognition.start()
 
@@ -19,5 +18,6 @@ function onSpeak(e){
 function exibeChute(chute) {
   sugerido.innerHTML=`
   <div>Você disse:</div>
-  <span class="box">${chute}</span>`  
+  <span class="box">${chute}</span>
+  `  
 }

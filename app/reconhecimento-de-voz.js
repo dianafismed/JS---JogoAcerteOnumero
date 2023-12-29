@@ -1,9 +1,8 @@
-var sugerido = document.getElementById('chute')
+const sugerido = document.getElementById('chute')
 
 window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 const recognition = new SpeechRecognition();
 
-recognition.continuous = false // apenas 1 resultado
 recognition.lang = 'pt-BR'
 recognition.start()
 
@@ -21,3 +20,7 @@ function exibeChute(chute) {
   <span class="box">${chute}</span>
   `  
 }
+
+recognition.addEventListener('end', () => {
+  recognition.start()}
+)
